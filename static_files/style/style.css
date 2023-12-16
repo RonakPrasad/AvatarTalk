@@ -1,0 +1,273 @@
+
+:root{
+    --black: #1D1D1D;
+    --white: #FFFFFF;
+}
+*,
+*::after,
+*::before,
+html,
+body{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    /* height: 100vh; */
+    /* width: 100vw; */
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+li{
+    list-style: none;
+}
+a{
+    color: inherit;
+    text-decoration: none;
+}
+header{
+    color: var(--white);
+    background-color: slateblue;
+    
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    align-content:space-around;
+    align-items: center;
+    justify-content: space-between;
+    padding: 17px 20px;
+    border-bottom: 1px solid rgb(51, 51, 51);
+}
+header ul{
+    display: flex;
+    /* width: auto; */
+    gap: 10px;
+}
+header .logo-main{
+    display: flex;
+    /* width: auto; */
+}
+
+header ul li{
+}
+main{
+    background-color: var(--white);
+    color: var(--black);
+}
+.add-project-main{
+    padding:35px 20px;
+    color: var(--white);
+    background-color: var(--black);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.2rem;
+    /* border-bottom: 1px solid var(--black); */
+}
+.add-project-main form{
+    /* padding-top: 10px; */
+    display: flex;
+    gap: 15px;
+}
+.submit-button{
+    padding: 0px 10px;
+    background-color: var(--white);
+    border: none;
+    /* border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px; */
+    cursor: pointer;
+}
+.submit-button:hover{
+    background-color: grey;
+}
+.all-projects-main{
+    padding: 15px 20px;
+    /* font-weight: bolder; */
+    font-size: 1.7rem;
+    text-transform: uppercase;
+}
+.all-projects-child{
+    padding: 20px 30px;
+    /* height: 70vh; */
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+.project-box{
+    background-color: slateblue;
+    color: var(--white);
+    padding: 30px 40px;
+    /* max-height: 100px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: .2s ease-in-out all;
+}
+footer{
+    margin-top: auto;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 12px;
+}
+.project-box:hover{
+    background-color: palevioletred;
+}
+
+ /* Select avatar page */
+
+ #radio-cards-container {
+    width: 100%;
+    height: 400px;
+    /* margin-top: 2rem; */
+    /* width: 75vw; */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+.radio-card {
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    /* border-radius: 10px; */
+    /* width: 300px; */
+    /* margin-right: 2rem; */
+    /* margin-bottom: 2rem; */
+    padding: 0rem;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    /* border-radius: 100%;  */
+}
+
+.radio-card:hover {
+    border: 2px solid #016787;
+    cursor: pointer;
+}
+
+
+.radio-card-icon img {
+    width: 220px;
+}
+
+
+.radio-card.selected {
+    border: 2px solid #032b7a;
+}
+
+.radio-card.selected .radio-card-check {
+    display: inline-flex;
+}
+.next-button{
+    margin-top: auto;
+    position: relative;
+    left: 92%;
+    padding: 7px 20px;
+    background-color: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    /* align-items: end; */
+}
+
+/* Drive in video selector page */
+.radio-card-icon{
+    display: flex;
+}
+.radio-card-icon video {
+    width: 220px;
+}
+
+/* Add text page */
+.add-text-main-block{
+    /* background-color: yellow; */
+}
+.add-text-main-block form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+}
+.text-audio-area-main{
+    display: flex;
+    width: 100%;
+    padding: 15px 30px;
+
+}
+.text-area-main{
+    width: 70%;
+    height: 70vh;
+}
+.text-area-main p{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+.text-area-main-textbox{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+.text-area-main-textbox textarea{
+    width: 70%;
+    height: 150px;
+}
+.audio-area-main{
+
+}
+.audio-area-main p{
+    font-size: 1.8rem;
+    text-transform: uppercase;
+}
+.submit-main{
+    padding: 10px 40px;
+    display: flex;
+    align-self: end;
+    
+}
+.generate-video-button{
+    background-color: var(--black);
+    color: var(--white);
+    cursor: pointer;
+    padding: 7px 10px;
+}
+.audio-list {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+/* Final video main */
+.final-video-main{
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 20px;
+}
+.download-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.download-button button{
+    cursor: pointer;
+    background-color: var(--black);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+}

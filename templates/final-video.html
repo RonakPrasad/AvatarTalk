@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font -->
+    {% block site_name %}
+    <title>Download video</title>
+    {% endblock site_name %}
+</head>
+<body>
+{% block content %}
+    <main class="final-video-main">
+        <video width="420" controls>
+            <source src="/{{video_url}}" type="video/mp4">
+        </video>
+        <div class="download-button">
+            <a href="/{{video_url}}" download><button type="button">Download</button></a>
+        </div>
+    </main>
+{% endblock content %}
+</body>
+</html>

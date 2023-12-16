@@ -1,0 +1,114 @@
+{% extends "base.html" %}{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Font -->
+    {% block site_name %}
+    <title>Select Avatar</title>
+    {% endblock site_name %}
+</head>
+<body>
+    {% block content %}
+    <main>
+
+        <div class="all-projects-main">
+            <p>Select Avatar:</p>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="all-projects-child">
+                    <div id="radio-cards-container">
+                        <!-- Radio Card  -->
+                        <div class="radio-card radio-card-1 selected" onclick="selectRadioCard('1')">
+                            <!-- Section to display the icon, label, and some additional text -->
+                            <div class="text-center">
+                                <div class="radio-card-icon">
+                                    <img src="{% static 'images/amy.png' %}" alt="React" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="radio-card radio-card-2" onclick="selectRadioCard('2')">
+                            <!-- Section to display the icon, label, and some additional text -->
+                            <div class="text-center">
+                                <div class="radio-card-icon">
+                                    <img src="{% static 'images/rian.png' %}" alt="React" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="radio-card radio-card-3" onclick="selectRadioCard('3')">
+                            <!-- Section to display the icon, label, and some additional text -->
+                            <div class="text-center">
+                                <div class="radio-card-icon">
+                                    <img src="{% static 'images/jack.png' %}" alt="React" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="radio-card radio-card-4" onclick="selectRadioCard('4')">
+                            <!-- Section to display the icon, label, and some additional text -->
+                            <div class="text-center">
+                                <div class="radio-card-icon">
+                                    <img src="{% static 'images/lana.png' %}" alt="React" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="radio-card radio-card-5" onclick="selectRadioCard('5')">
+                            <!-- Section to display the icon, label, and some additional text -->
+                            <div class="text-center">
+                                <div class="radio-card-icon">
+                                    <img src="{% static 'images/lily.png' %}" alt="React" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="radio-card radio-card-6" onclick="selectRadioCard('6')">
+                            <!-- Section to display the icon, label, and some additional text -->
+                            <div class="text-center">
+                                <div class="radio-card-icon">
+                                    <img src="{% static 'images/matt.png' %}" alt="React" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    <!-- Hidden input field to store the selected card number -->
+    <input type="hidden" id="selected-card" name="selected-card">
+
+    <!-- Add a Next button with type="submit" -->
+    <button type="submit" class="next-button">Next</button>
+            </form>
+        </div>
+    </main>
+    <script>
+        const selectRadioCard = (cardNo) => {
+            /**
+             * Loop through all radio cards, and remove the class "selected" from those elements.
+             */
+            const allRadioCards = document.querySelectorAll(".radio-card");
+            allRadioCards.forEach((element, index) => {
+                element.classList.remove("selected");
+            });
+            /**
+             * Add the class "selected" to the card which user has clicked on.
+             */
+            const selectedCard = document.querySelector(".radio-card-" + cardNo);
+            selectedCard.classList.add("selected");
+    
+            // Set the selected card number in the hidden input field
+            document.getElementById("selected-card").value = cardNo;
+        };
+    
+        // Handle form submission
+        document.getElementById("radio-card-form").addEventListener("submit", function (e) {
+            e.preventDefault();
+    
+            // Get the selected card number from the hidden input field
+            const selectedCardNo = document.getElementById("selected-card").value;
+    
+            // Now you can submit the form data using Django or any other method.
+            // Replace the following line with your actual backend submission code.
+            alert("Selected Card Number: " + selectedCardNo);
+        });
+    </script>
+    {% endblock content %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+asgiref==3.7.2
+autopep8==1.4.4
+backports.zoneinfo==0.2.1
+certifi==2023.7.22
+charset-normalizer==3.2.0
+Django==4.2.5
+django-jazzmin==2.6.0
+djangorestframework==3.14.0
+idna==3.4
+pep8==1.7.1
+pycodestyle==2.5.0
+pytz==2018.5
+requests==2.31.0
+sqlparse==0.3.1
+typing-extensions==4.8.0
+urllib3==2.0.5

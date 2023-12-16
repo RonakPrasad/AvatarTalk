@@ -1,0 +1,80 @@
+{% extends "base.html" %} {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block site_name %}
+    <title>Add Text</title>
+    {% endblock site_name %}
+</head>
+<body>
+    {% block content %}
+    <main class="add-text-main-block">
+        <form action="" method="post">
+            {% csrf_token %}
+        <div class="text-audio-area-main">
+            <div class="text-area-main">
+                <p>Add your text here:</p>
+                <div class="text-area-main-textbox">
+                    <textarea name="text-area" id=""></textarea>
+                </div>
+            </div>
+            <div class="audio-area-main">
+                <p>Select the voice:</p>
+                <div class="audio-list">
+                    {% for voice in voices %}
+                    <div class="audio-block">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="voice" id="" value="{{voice.audio_id}}" checked>
+                            {{voice.audio_title}}
+                          </label>
+                        </div>
+                        <audio controls>
+                            <source src="{{voice.audio_file.url}}" type="audio/wav">
+                        </audio>
+                    </div>
+                    {% endfor %}
+                    <!-- <div class="audio-block">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="voice" id="" value="en-IN-PrabhatNeural" checked>
+                            Indian Male Voice (English)
+                          </label>
+                        </div>
+                        <audio controls>
+                            <source src="../media/en-IN-PrabhatNeural.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                    <div class="audio-block">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="voice" id="" value="en-US-AshleyNeural" checked>
+                            American Female Voice (English)
+                          </label>
+                        </div>
+                        <audio controls>
+                            <source src="../media/en-US-AshleyNeural.wav" type="audio/wav">
+                        </audio>
+                    </div>
+                    <div class="audio-block">
+                        <div class="form-check">
+                            <label class="form-check-label">
+                            <input type="radio" class="form-check-input" name="voice" id="" value="en-US-ChristopherNeural" checked>
+                            American Male Voice (English)
+                          </label>
+                        </div>
+                        <audio controls>
+                            <source src="../media/en-US-ChristopherNeural.wav" type="audio/wav">
+                        </audio>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+        <div class="submit-main">
+            <input type="submit" value="Generate Video" class="generate-video-button">
+        </div>
+    </form>
+    </main>
+    {% endblock content %}
+</body>
+</html>
